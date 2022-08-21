@@ -1,0 +1,46 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <a href="#" class="navbar-brand">Logo</a>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item center">
+        <a
+          *ngIf="authenticationnService.isLoggedIn()"
+          class="nav-link text-info"
+          routerLink=""
+          >Home</a
+        >
+      </li>
+      <li class="nav-item center">
+        <a
+          *ngIf="authenticationnService.isLoggedIn()"
+          href="#"
+          class="nav-link text-info"
+          >Dashbord</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          *ngIf="!authenticationnService.isLoggedIn()"
+          routerLink="login"
+          class="nav-link"
+          ><button class="btn btn-light">Login</button></a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="!authenticationnService.isLoggedIn()" href="" class="nav-link"
+          ><button class="btn btn-info">Sign Up</button></a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          *ngIf="authenticationnService.isLoggedIn()"
+          routerLink="/logout"
+          class="nav-link"
+          ><button class="btn btn-info">Logout</button></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

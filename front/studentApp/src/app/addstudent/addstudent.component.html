@@ -1,0 +1,53 @@
+<div class="container">
+  <form
+    (ngSubmit)="!studentForm.invalid && addStudent(student)"
+    #studentForm="ngForm"
+  >
+    <fieldset>
+      <label for="username">Username</label>
+      <input
+        class="form-control"
+        id="username"
+        type="text"
+        name="username"
+        required="required"
+        [(ngModel)]="student.name"
+        (change)="log(username)"
+        #username="ngModel"
+      />
+    </fieldset>
+    <fieldset>
+      <label for="description">Description : </label>
+      <textarea
+        class="form-control"
+        name="description"
+        id="description"
+        cols="30"
+        rows="10"
+        [(ngModel)]="student.description"
+      ></textarea>
+    </fieldset>
+    <fieldset>
+      <label for="date">Birth Date : </label>
+      <input
+        type="date"
+        id="date"
+        name="date birth"
+        class="form-control"
+        required="required"
+        [(ngModel)]="student.dateOfBirth"
+      />
+    </fieldset>
+    <fieldset>
+      <label for="email">Email : </label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        [(ngModel)]="student.email"
+        name="email"
+      />
+    </fieldset>
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>

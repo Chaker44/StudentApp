@@ -1,0 +1,45 @@
+<div class="container">
+  <fieldset>
+    <label for="username">Username</label>
+    <input
+      [(ngModel)]="student.name"
+      class="form-control"
+      id="username"
+      type="text"
+      required="required"
+    />
+  </fieldset>
+  <fieldset>
+    <label for="description">Description : </label>
+    <textarea
+      class="form-control"
+      name="description"
+      id="description"
+      cols="30"
+      rows="10"
+      [(ngModel)]="student.description"
+    ></textarea>
+  </fieldset>
+  <fieldset>
+    <label for="date">Birth Date : </label>
+    <input
+      type="date"
+      [(ngModel)]="student.dateOfBirth"
+      id="date"
+      class="form-control"
+      required="required"
+    />
+  </fieldset>
+  <fieldset>
+    <label for="email">Email : </label>
+    <input
+      [(ngModel)]="student.email"
+      type="email"
+      id="email"
+      class="form-control"
+    />
+  </fieldset>
+  <button (click)="updateStudent(student.id, student)" class="btn btn-success">
+    Save
+  </button>
+</div>

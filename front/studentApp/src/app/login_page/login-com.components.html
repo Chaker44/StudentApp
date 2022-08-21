@@ -1,0 +1,12 @@
+<div class="container">
+  <label for="username">Username : </label>
+  <input type="text" id="username" [(ngModel)]="username" />
+
+  <label for="password">Passoword : </label>
+  <input type="text" id="password" [(ngModel)]="password" />
+
+  <div class="alert alert-warning" *ngIf="invalidLogin">
+    Invalid credentials
+  </div>
+  <button (click)="onHandleLogin()" class="btn btn-success">Log in</button>
+</div>
